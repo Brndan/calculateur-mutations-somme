@@ -57,23 +57,24 @@ function calculMutation() {
     displayResults("aAfficher");
 
     if (document.getElementById("faisant-fonction-direction").checked) {
-        let total_points_direction = total_points += faisant_fonction;
-        contenu = "Pour votre vœu sur le poste de direction pour lequel vous êtes faisant-fonction, votre barème est de " + total_points_direction + " points.";
+        console.log("faisant fonction")
+        let total_points_direction = total_points + faisant_fonction;
+        let contenu = "Pour votre vœu sur le poste de direction pour lequel vous êtes faisant-fonction, votre barème est de " + total_points_direction + " points.";
         addResult("aAfficher", contenu)
 
     }
 
     if (voeu_repete > 0) {
         let total_points_voeu1 = total_points + voeu_repete;
-        contenu = "Pour votre vœu précis de rang 1, votre barème est de " + total_points_voeu1 + " points.";
+        let contenu = "Pour votre vœu précis de rang 1, votre barème est de " + total_points_voeu1 + " points.";
         addResult("aAfficher", contenu)
     }
 
-    contenu = "Votre barème est de " + total_points + " points.";
-    addResult("aAfficher", contenu);
+   let  bareme = "Votre barème est de " + total_points + " points.";
+    addResult("aAfficher", bareme);
 
     if (document.getElementById("carte-scolaire").checked) {
-        contenu = "Vous bénéficiez en plus d'une bonification en raison de la suppression de votre poste de 500 à 900 points.";
+        let contenu = "Vous bénéficiez en plus d'une bonification en raison de la suppression de votre poste de 500 à 900 points.";
         addResult("aAfficher", contenu)
     }
 
