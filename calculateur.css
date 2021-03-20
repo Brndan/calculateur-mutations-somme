@@ -16,6 +16,11 @@ input[type="button"] {
 
 }
 
+#logo {
+  padding-left: 1em;
+  height: 1em;
+}
+
 /* Dissimuler les coordnnées du syndicat avant le calcul*/
 
 #syndicat {
