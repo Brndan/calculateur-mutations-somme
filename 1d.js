@@ -79,6 +79,11 @@ function calculMutation() {
     }
 
     console.log("total_points " + total_points);
+
+    // Révéler les coordonnées du syndicat
+    document.getElementById("syndicat").style.display = "block";
+
+
     // Aller à la vue du résultat (utile sur petit écran)
     document.getElementById("aAfficher").scrollIntoView();
 
@@ -100,7 +105,7 @@ function displayResults(id) {
     let node = document.createTextNode("Résultat");
     newH2.appendChild(node);
     let element = document.getElementById(id);
-    content = "Voici une estimation de vos points de mutation :"
+    let content = "Voici une estimation de vos points de mutation :"
     element.appendChild(newH2);
     addResult(id, content)
 }

@@ -16,6 +16,12 @@ input[type="button"] {
 
 }
 
+/* Dissimuler les coordnnées du syndicat avant le calcul*/
+
+#syndicat {
+  display: none;
+}
+
 
 /* INFOBULLES */
 
