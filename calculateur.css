@@ -2,8 +2,12 @@
 
 .menuSelection {
   margin-top: 1ex;
+  margin-bottom: 1ex;
 }
 
+input[type="button"] {
+  margin-top: 2ex;
+}
 
 /* INFOBULLES */
 
