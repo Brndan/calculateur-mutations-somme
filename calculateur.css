@@ -13,7 +13,6 @@ input[type="button"] {
   display: block;
   margin: auto;
   margin-top: 2ex;
-
 }
 
 #logo {
@@ -40,6 +39,7 @@ img[class="tooltipicon"] {
     width: 2ex;
     height: 2ex;
     border-style: none;
+    /* padding: 5px; → peut être utile pour augmenter la surface de touche */
     
 }
 
