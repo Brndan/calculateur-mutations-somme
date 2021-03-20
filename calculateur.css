@@ -1,5 +1,9 @@
 /* APPARENCE GÉNÉRALE DU FORMULAIRE */
 
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Oxygen, Cantarell, sans-serif;
+}
+
 .menuSelection {
   margin-top: 1ex;
   margin-bottom: 1ex;
@@ -8,6 +12,7 @@
 input[type="button"] {
   margin-top: 2ex;
 }
+
 
 /* INFOBULLES */
 
