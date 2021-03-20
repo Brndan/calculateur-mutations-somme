@@ -1,6 +1,6 @@
 function calculMutation() {
-    const pts_situation_familiale = 5;
-    const pts_handicap_maladie = 25;
+    const PTS_SITUATION_FAMILIALE = 5;
+    const PTS_HANDICAP_MALADIE = 25;
 
     /* Récupération des valeurs */
 
@@ -15,7 +15,7 @@ function calculMutation() {
             situation_familiale = 0;
             break;
         default:
-            situation_familiale = pts_situation_familiale;
+            situation_familiale = PTS_SITUATION_FAMILIALE;
     }
 
 
@@ -24,8 +24,8 @@ function calculMutation() {
     // Handicap - maladie
     let handicap_maladie = 0;
 
-    if (document.getElementById("pacd-cld").checked) handicap_maladie += pts_handicap_maladie;
-    if (document.getElementById("rqth-cdaph").checked) handicap_maladie += pts_handicap_maladie;
+    if (document.getElementById("pacd-cld").checked) handicap_maladie += PTS_HANDICAP_MALADIE;
+    if (document.getElementById("rqth-cdaph").checked) handicap_maladie += PTS_HANDICAP_MALADIE;
 
     // Ancienneté dans le 1er degré
     let anciennete = +document.getElementById("anciennete").value * 2;
@@ -34,20 +34,20 @@ function calculMutation() {
     anciennete = Math.round(anciennete * 100) / 100;
 
     // Parcours professionnel
-    const anciennete_poste = 3;
-    const anciennete_direction = 3;
-    const faisant_fonction = 10;
-    const formation = 3;
-    const ash = 3;
-    const rep = 3;
+    const ANCIENNETE_POSTE = 3;
+    const ANCIENNETE_DIRECTION = 3;
+    const FAISANT_FONCTION = 10;
+    const FORMATION = 3;
+    const ASH = 3;
+    const REP = 3;
 
     let parcours_pro = 0;
 
-    if (document.getElementById("anciennete-poste").checked) parcours_pro += anciennete_poste;
-    if (document.getElementById("direction").checked) parcours_pro += anciennete_direction;
-    if (document.getElementById("formation").checked) parcours_pro += formation;
-    if (document.getElementById("ash").checked) parcours_pro += ash;
-    if (document.getElementById("rep").checked) parcours_pro += rep;
+    if (document.getElementById("anciennete-poste").checked) parcours_pro += ANCIENNETE_POSTE;
+    if (document.getElementById("direction").checked) parcours_pro += ANCIENNETE_DIRECTION;
+    if (document.getElementById("formation").checked) parcours_pro += FORMATION;
+    if (document.getElementById("ash").checked) parcours_pro += ASH;
+    if (document.getElementById("rep").checked) parcours_pro += REP;
 
     let voeu_repete = +document.getElementById("voeu-repete").value
 
@@ -58,7 +58,7 @@ function calculMutation() {
 
     if (document.getElementById("faisant-fonction-direction").checked) {
         console.log("faisant fonction")
-        let total_points_direction = total_points + faisant_fonction;
+        let total_points_direction = total_points + FAISANT_FONCTION;
         let contenu = "Pour votre vœu sur le poste de direction pour lequel vous êtes faisant-fonction, votre barème est de " + total_points_direction + " points.";
         addResult("aAfficher", contenu)
 
