@@ -28,9 +28,9 @@ function calculMutation() {
     if (document.getElementById("rqth-cdaph").checked) handicap_maladie += pts_handicap_maladie;
 
     // Ancienneté dans le 1er degré
-    let anciennete = parseInt(document.getElementById("anciennete").value, 10) * 2;
-    anciennete += parseInt(document.getElementById("anciennete-mois").value, 10) / 6;
-    anciennete += parseInt(document.getElementById("anciennete-jours").value, 10) / 180;
+    let anciennete = +document.getElementById("anciennete").value * 2;
+    anciennete += +document.getElementById("anciennete-mois").value / 6;
+    anciennete += document.getElementById("anciennete-jours").value / 180;
     anciennete = Math.round(anciennete * 100) / 100;
 
     // Parcours professionnel
