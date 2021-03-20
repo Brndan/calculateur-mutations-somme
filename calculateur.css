@@ -43,7 +43,7 @@ img[class="tooltipicon"] {
   max-width: 20ch;
 }
 
-/* Show the tooltip text when you mouse over the tooltip container */
+/* Montrer l’infobulle au passage de la souris */
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
