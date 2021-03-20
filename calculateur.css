@@ -1,0 +1,40 @@
+/* APPARENCE GÉNÉRALE DU FORMULAIRE */
+
+.menuSelection {
+  margin-top: 1ex;
+}
+
+
+/* INFOBULLES */
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+}
+
+/* Image de l’infobulle */
+img[class="tooltipicon"] {
+    width: 2ex;
+    height: 2ex;
+    border-style: none;
+    
+}
+
+/* Texte de l’infobulle */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 1ex;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  width: max-content;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
