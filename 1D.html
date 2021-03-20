@@ -272,6 +272,15 @@
       </select>
    </div>
 
+   <div>
+      <input type="checkbox" name="carte-scolaire" id="carte-scolaire">
+      <label for="carte-scolaire">Mesure de carte scolaire</label>
+      <div class="tooltip"><img src="infobulle.png" class="tooltipicon">
+         <span class="tooltiptext">Votre poste a été supprimé cette année ou l'an dernier, et vous êtes encore en
+            affectation provisoire</span>
+      </div>
+   </div>
+
 
    <div class="boutonCalcul" id="calcul">
       <input type="button" value="Calculer" onclick="calculMutation();" />
@@ -279,10 +288,10 @@
 
 
 
-      <div id="resultat">
-         <h2>Résultat</h2>
-         <p>Voici une estimation de vos points de mutation:</p>
-         <div id="aAfficher"></div>
+   <div id="resultat">
+      <h2>Résultat</h2>
+      <p>Voici une estimation de vos points de mutation:</p>
+      <div id="aAfficher"></div>
    </div>
 
    <div class="boutonReset" id="reset">

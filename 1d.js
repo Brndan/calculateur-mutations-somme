@@ -80,6 +80,11 @@ function calculMutation() {
     contenu = "Votre barème est de " + total_points + " points.";
     addResult("aAfficher", contenu);
 
+    if (document.getElementById("carte-scolaire").checked == true) {
+        contenu = "Vous bénéficiez en plus d'une bonification en raison de la suppression de votre poste de 500 à 900 points";
+        addResult("aAfficher", contenu)
+    }
+
     console.log("total_points " + total_points);
 
 }
