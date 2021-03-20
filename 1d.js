@@ -24,8 +24,8 @@ function calculMutation() {
     // Handicap - maladie
     let handicap_maladie = 0;
 
-    if (document.getElementById("pacd-cld").checked == true) handicap_maladie += pts_handicap_maladie;
-    if (document.getElementById("rqth-cdaph").checked == true) handicap_maladie += pts_handicap_maladie;
+    if (document.getElementById("pacd-cld").checked) handicap_maladie += pts_handicap_maladie;
+    if (document.getElementById("rqth-cdaph").checked) handicap_maladie += pts_handicap_maladie;
 
     // Ancienneté dans le 1er degré
     let anciennete = parseInt(document.getElementById("anciennete").value) * 2;
@@ -43,18 +43,18 @@ function calculMutation() {
 
     let parcours_pro = 0;
 
-    if (document.getElementById("anciennete-poste").checked == true) parcours_pro += anciennete_poste;
-    if (document.getElementById("direction").checked == true) parcours_pro += anciennete_direction;
-    if (document.getElementById("formation").checked == true) parcours_pro += formation;
-    if (document.getElementById("ash").checked == true) parcours_pro += ash;
-    if (document.getElementById("rep").checked == true) parcours_pro += rep;
+    if (document.getElementById("anciennete-poste").checked) parcours_pro += anciennete_poste;
+    if (document.getElementById("direction").checked) parcours_pro += anciennete_direction;
+    if (document.getElementById("formation").checked) parcours_pro += formation;
+    if (document.getElementById("ash").checked) parcours_pro += ash;
+    if (document.getElementById("rep").checked) parcours_pro += rep;
 
     let voeu_repete = +document.getElementById("voeu-repete").value
 
     // Calcul des points 
     let total_points = situation_familiale + handicap_maladie + anciennete + parcours_pro;
 
-    if (document.getElementById("faisant-fonction-direction").checked == true) {
+    if (document.getElementById("faisant-fonction-direction").checked) {
         let total_points_direction = total_points += faisant_fonction;
         contenu = "Pour votre vœu sur le poste de direction pour lequel vous êtes faisant-fonction, votre barème est de " + total_points_direction + " points.";
         addResult("aAfficher", contenu)
@@ -70,7 +70,7 @@ function calculMutation() {
     contenu = "Votre barème est de " + total_points + " points.";
     addResult("aAfficher", contenu);
 
-    if (document.getElementById("carte-scolaire").checked == true) {
+    if (document.getElementById("carte-scolaire").checked) {
         contenu = "Vous bénéficiez en plus d'une bonification en raison de la suppression de votre poste de 500 à 900 points";
         addResult("aAfficher", contenu)
     }
