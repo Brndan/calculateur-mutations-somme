@@ -10,7 +10,10 @@ body {
 }
 
 input[type="button"] {
+  display: block;
+  margin: auto;
   margin-top: 2ex;
+
 }
 
 
