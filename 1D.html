@@ -172,14 +172,8 @@
    </div>
 
    <h2>Bonifications liées au parcours professionnel</h2>
-   <div>
-      <input type="checkbox" name="anciennete-poste" id="anciennete-poste">
-      <label for="anciennete-poste">3 ans d’ancienneté dans le poste</label>
-      <div class="tooltip"><img src="infobulle.png" class="tooltipicon">
-         <span class="tooltiptext">3 années effectives sur le poste à titre définitif au 31 août de l’année en
-            cours</span>
-      </div>
-   </div>
+
+   <h3>Bonifications liées à la direction d’école</h3>
 
    <div>
       <input type="checkbox" name="direction" id="direction">
@@ -198,6 +192,18 @@
             définitif</span>
       </div>
    </div>
+
+   <h3>Autres éléments</h3>
+
+   <div>
+      <input type="checkbox" name="anciennete-poste" id="anciennete-poste">
+      <label for="anciennete-poste">3 ans d’ancienneté dans le poste</label>
+      <div class="tooltip"><img src="infobulle.png" class="tooltipicon">
+         <span class="tooltiptext">3 années effectives sur le poste à titre définitif au 31 août de l’année en
+            cours</span>
+      </div>
+   </div>
+
 
    <div>
       <input type="checkbox" name="formation" id="formation">
@@ -291,11 +297,8 @@
 
 
 
-   <div id="resultat">
-      <h2>Résultat</h2>
-      <p>Voici une estimation de vos points de mutation:</p>
-      <div id="aAfficher"></div>
-   </div>
+   <div id="aAfficher"></div>
+
 
    <div id="reset">
       <input type="button" value="Recommencer" onclick="location.reload(true);" />

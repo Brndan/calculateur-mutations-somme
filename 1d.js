@@ -54,6 +54,8 @@ function calculMutation() {
     // Calcul des points 
     let total_points = situation_familiale + handicap_maladie + anciennete + parcours_pro;
 
+    displayResults("aAfficher");
+
     if (document.getElementById("faisant-fonction-direction").checked) {
         let total_points_direction = total_points += faisant_fonction;
         contenu = "Pour votre vœu sur le poste de direction pour lequel vous êtes faisant-fonction, votre barème est de " + total_points_direction + " points.";
@@ -71,20 +73,33 @@ function calculMutation() {
     addResult("aAfficher", contenu);
 
     if (document.getElementById("carte-scolaire").checked) {
-        contenu = "Vous bénéficiez en plus d'une bonification en raison de la suppression de votre poste de 500 à 900 points";
+        contenu = "Vous bénéficiez en plus d'une bonification en raison de la suppression de votre poste de 500 à 900 points.";
         addResult("aAfficher", contenu)
     }
 
     console.log("total_points " + total_points);
+    // Aller à la vue du résultat (utile sur petit écran)
+    document.getElementById("aAfficher").scrollIntoView();
 
 }
 
 
-// Cette fonction sert à afficher les éléments de réponse.
+
+// Ces fonctions servent à afficher les éléments de réponse.
 function addResult(id, content) {
     let newP = document.createElement("p");
     let node = document.createTextNode(content);
     newP.appendChild(node);
     let element = document.getElementById(id);
     element.appendChild(newP)
+}
+
+function displayResults(id) {
+    let newH2 = document.createElement("h2");
+    let node = document.createTextNode("Résultat");
+    newH2.appendChild(node);
+    let element = document.getElementById(id);
+    content = "Voici une estimation de vos points de mutation :"
+    element.appendChild(newH2);
+    addResult(id, content)
 }
