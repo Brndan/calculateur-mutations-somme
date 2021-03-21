@@ -110,15 +110,12 @@ function displayResults(id) {
     addResult(id, content)
 }
 
-function resetForm() {
-    location.reload(true);
-}
 
 /* Gestionnaire d’événements */
 
 // Événement pour le bouton de réinitialisation
 const reset = document.querySelector("#reset");
-reset.onclick = () => { location.reload(true); }
+reset.onclick = () => { location.reload(); }
 
 // Événement pour le bouton de calcul
 const calcul = document.querySelector("#calcul");
