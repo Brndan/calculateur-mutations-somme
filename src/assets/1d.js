@@ -122,4 +122,4 @@ reset.onclick = () => { location.reload(true); }
 
 // Événement pour le bouton de calcul
 const calcul = document.querySelector("#calcul");
-calcul.onclick = calcul.onclick = calculMutation;
+calcul.onclick = calculMutation;
