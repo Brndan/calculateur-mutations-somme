@@ -15,6 +15,11 @@ input[type="button"] {
   margin-top: 2ex;
 }
 
+/* input[type="checkbox"] {
+  margin: auto;
+  margin-top: 2ex;
+} */
+
 #logo {
   padding-left: 1em;
   height: 1em;
@@ -32,7 +37,9 @@ input[type="button"] {
 .tooltip {
 	position: relative;
 	display: inline-block;
-  padding: 5px;
+  font-size: large;
+  vertical-align: super;
+  padding-right: 1em;
 }
 
 /* Texte de l’infobulle */
@@ -52,5 +59,5 @@ input[type="button"] {
 /* Montrer l’infobulle au passage de la souris */
 .tooltip:hover .tooltiptext {
   visibility: visible;
-  opacity: 0.75;
+  opacity: 0.8;
 }
