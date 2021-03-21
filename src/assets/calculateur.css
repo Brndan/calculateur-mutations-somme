@@ -4,10 +4,7 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Oxygen, Cantarell, sans-serif;
 }
 
-h1,
-h2,
-h3,
-a {
+h1, h2, h3, a {
   color: red;
 }
 
@@ -42,18 +39,18 @@ input[type="checkbox"] {
   display: none;
 }
 
-
 /* INFOBULLES */
 
 .tooltip {
-	position: relative;
-	display: inline-block;
+  position: relative;
+  display: inline-block;
   font-size: large;
   vertical-align: super;
   padding-right: 1em;
 }
 
 /* Texte de l’infobulle */
+
 .tooltip .tooltiptext {
   visibility: hidden;
   background-color: rgb(41, 39, 39);
@@ -68,6 +65,7 @@ input[type="checkbox"] {
 }
 
 /* Montrer l’infobulle au passage de la souris */
+
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 0.8;
