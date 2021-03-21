@@ -114,9 +114,14 @@ function displayResults(id) {
 /* Gestionnaire d’événements */
 
 // Événement pour le bouton de réinitialisation
+
+/* const reset = document.querySelector("#reset");
+reset.onclick = () => { location.reload(); } */
 const reset = document.querySelector("#reset");
-reset.onclick = () => { location.reload(); }
+reset.addEventListener("click",() => {
+    location.reload();
+});
 
 // Événement pour le bouton de calcul
-const calcul = document.querySelector("#calcul");
-calcul.onclick = calculMutation;
+const calcul = document.getElementById("calcul");
+calcul.addEventListener("click",calculMutation);
