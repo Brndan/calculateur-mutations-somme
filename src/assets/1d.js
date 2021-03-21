@@ -70,7 +70,7 @@ function calculMutation() {
         addResult("aAfficher", contenu)
     }
 
-   let  bareme = "Votre barème est de " + total_points + " points.";
+    let bareme = "Votre barème est de " + total_points + " points.";
     addResult("aAfficher", bareme);
 
     if (document.getElementById("carte-scolaire").checked) {
