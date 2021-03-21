@@ -17,6 +17,14 @@ h1, h2, h3, a {
   margin-bottom: 1ex;
 }
 
+.menuSelection > * {
+  display: inline-block;
+}
+
+.menuSelection > select {
+  width: inherit;
+}
+
 input[type="button"] {
   display: block;
   margin: auto;
