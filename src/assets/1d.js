@@ -114,7 +114,12 @@ function resetForm() {
     location.reload(true);
 }
 
-// Événements
+/* Gestionnaire d’événements */
 
+// Événement pour le bouton de réinitialisation
 const reset = document.querySelector("#reset");
 reset.onclick = () => { location.reload(true); }
+
+// Événement pour le bouton de calcul
+const calcul = document.querySelector("#calcul");
+calcul.onclick = calcul.onclick = calculMutation;
