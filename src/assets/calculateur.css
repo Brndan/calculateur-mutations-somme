@@ -32,15 +32,7 @@ input[type="button"] {
 .tooltip {
 	position: relative;
 	display: inline-block;
-}
-
-/* Image de l’infobulle */
-img[class="tooltipicon"] {
-    width: 2ex;
-    height: 2ex;
-    border-style: none;
-    /* padding: 5px; → peut être utile pour augmenter la surface de touche */
-    
+  padding: 5px;
 }
 
 /* Texte de l’infobulle */
