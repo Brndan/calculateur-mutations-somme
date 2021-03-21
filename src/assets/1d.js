@@ -89,8 +89,6 @@ function calculMutation() {
 
 }
 
-
-
 // Ces fonctions servent à afficher les éléments de réponse.
 function addResult(id, content) {
     let newP = document.createElement("p");
@@ -118,10 +116,10 @@ function displayResults(id) {
 /* const reset = document.querySelector("#reset");
 reset.onclick = () => { location.reload(); } */
 const reset = document.querySelector("#reset");
-reset.addEventListener("click",() => {
+reset.addEventListener("click", () => {
     location.reload();
 });
 
 // Événement pour le bouton de calcul
 const calcul = document.getElementById("calcul");
-calcul.addEventListener("click",calculMutation);
+calcul.addEventListener("click", calculMutation);
