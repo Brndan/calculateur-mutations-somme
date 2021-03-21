@@ -109,3 +109,12 @@ function displayResults(id) {
     element.appendChild(newH2);
     addResult(id, content)
 }
+
+function resetForm() {
+    location.reload(true);
+}
+
+// Événements
+
+const reset = document.querySelector("#reset");
+reset.onclick = () => { location.reload(true); }
