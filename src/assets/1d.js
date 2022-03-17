@@ -30,7 +30,7 @@ function calculMutation() {
     if (document.getElementById("situation_familiale").value == "rapprochement_conjoint" || document.getElementById("situation_familiale").value == "autorité_conjointe") {
         situation_familiale += enfants;
     }
-    console.log("famille :" + situation_familiale);
+
 
     // Handicap - maladie
     let handicap_maladie = 0;
@@ -41,8 +41,8 @@ function calculMutation() {
 
     // Ancienneté dans le 1er degré
     let anciennete = +document.getElementById("anciennete").value * 2;
-    anciennete += +document.getElementById("anciennete-mois").value / 6;
-    anciennete += document.getElementById("anciennete-jours").value / 180;
+    anciennete += (+document.getElementById("anciennete-mois").value / 12) *2;
+    anciennete += (document.getElementById("anciennete-jours").value / 365) *2;
     anciennete = Math.round(anciennete * 100) / 100;
 
     // Parcours professionnel
@@ -52,8 +52,10 @@ function calculMutation() {
     const FORMATION = 3;
     const ASH = 3;
     const REP = 3;
+    
 
     let parcours_pro = 0;
+    let voeu_repete = 0;
 
     if (document.getElementById("anciennete-poste").checked) parcours_pro += ANCIENNETE_POSTE;
     if (document.getElementById("direction").checked) parcours_pro += ANCIENNETE_DIRECTION;
@@ -61,8 +63,8 @@ function calculMutation() {
     if (document.getElementById("ash").checked) parcours_pro += ASH;
     if (document.getElementById("rep").checked) parcours_pro += REP;
 
-    let voeu_repete = +document.getElementById("voeu-repete").value
-
+    if (document.getElementById("voeu-repete").checked) voeu_repete = 1;
+  
     // Calcul des points 
     let total_points = situation_familiale + handicap_maladie + anciennete + parcours_pro;
 
@@ -135,3 +137,8 @@ reset.addEventListener("click", () => {
 // Événement pour le bouton de calcul
 const calcul = document.getElementById("calcul");
 calcul.addEventListener("click", calculMutation);
+
+const checkboxes = document.querySelectorAll(".cliquable");
+checkboxes.forEach(function(item) {
+  item.addEventListener('click', calculMutation)
+})
