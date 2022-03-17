@@ -68,6 +68,12 @@ function calculMutation() {
     // Calcul des points 
     let total_points = situation_familiale + handicap_maladie + anciennete + parcours_pro;
 
+    // Détruit les résultats affichés
+    let node = document.getElementById("aAfficher");
+    while (node.firstChild) {
+        node.removeChild(node.firstChild);
+    }
+
     displayResults("aAfficher");
 
     if (document.getElementById("faisant-fonction-direction").checked) {
@@ -88,18 +94,17 @@ function calculMutation() {
     addResult("aAfficher", bareme);
 
     if (document.getElementById("carte-scolaire").checked) {
-        let contenu = "Vous bénéficiez en plus d'une bonification en raison de la suppression de votre poste de 500 à 900 points.";
+        let contenu = "Vous bénéficiez en plus d'une bonification en raison de la suppression de votre poste de 200 à 300 points.";
         addResult("aAfficher", contenu)
     }
 
     console.log("total_points " + total_points);
-
     // Révéler les coordonnées du syndicat
     document.getElementById("syndicat").style.display = "block";
 
 
     // Aller à la vue du résultat (utile sur petit écran)
-    document.getElementById("aAfficher").scrollIntoView();
+    //document.getElementById("aAfficher").scrollIntoView();
 
 }
 
@@ -129,14 +134,11 @@ function displayResults(id) {
 
 /* const reset = document.querySelector("#reset");
 reset.onclick = () => { location.reload(); } */
-const reset = document.querySelector("#reset");
-reset.addEventListener("click", () => {
-    location.reload();
-});
+//const reset = document.querySelector("#reset");
+//reset.addEventListener("click", () => {
+//    location.reload();
+//});
 
-// Événement pour le bouton de calcul
-const calcul = document.getElementById("calcul");
-calcul.addEventListener("click", calculMutation);
 
 const checkboxes = document.querySelectorAll(".cliquable");
 checkboxes.forEach(function(item) {
