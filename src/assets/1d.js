@@ -1,6 +1,8 @@
 function calculMutation() {
     const PTS_SITUATION_FAMILIALE = 5;
     const PTS_HANDICAP_MALADIE = 25;
+    const PTS_PARENT_ISOLE = 2;
+    const PTS_MEDECINE_TRAVAIL = 100;
 
     /* Récupération des valeurs */
 
@@ -14,18 +16,28 @@ function calculMutation() {
         case "RAS":
             situation_familiale = 0;
             break;
-        default:
+        case "parent_isole":
+            situation_familiale = PTS_PARENT_ISOLE;
+            break;
+        case "rapprochement_conjoint":
             situation_familiale = PTS_SITUATION_FAMILIALE;
+            break;
+        case "autorité_conjointe":
+            situation_familiale = PTS_SITUATION_FAMILIALE;
+            break;
     }
 
-
-    if (situation_familiale > 0) situation_familiale += enfants;
+    if (document.getElementById("situation_familiale").value == "rapprochement_conjoint" || document.getElementById("situation_familiale").value == "autorité_conjointe") {
+        situation_familiale += enfants;
+    }
+    console.log("famille :" + situation_familiale);
 
     // Handicap - maladie
     let handicap_maladie = 0;
 
     if (document.getElementById("pacd-cld").checked) handicap_maladie += PTS_HANDICAP_MALADIE;
     if (document.getElementById("rqth-cdaph").checked) handicap_maladie += PTS_HANDICAP_MALADIE;
+    if (document.getElementById("rqth_medecin").checked) handicap_maladie += PTS_MEDECINE_TRAVAIL;
 
     // Ancienneté dans le 1er degré
     let anciennete = +document.getElementById("anciennete").value * 2;

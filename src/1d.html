@@ -24,9 +24,22 @@
    <h2>Situation familiale</h2>
 
    <div class="menuSelection">
+      <label for="situation_familiale">Situation familiale</label>
+      <span class="tooltip">ℹ️
+         <span class="tooltiptext">Votre situation familiale</span>
+      </span>
+      <select id="situation_familiale" name="situation_familiale">
+         <option value="RAS" selected>RAS</option>
+         <option value="rapprochement_conjoint">Rapprochement de conjoint⋅e</option>
+         <option value="autorité_conjointe">Autorité parentale conjointe</option>
+         <option value="parent_isole">Parent⋅e isolé⋅e</option>
+      </select>
+   </div>
+
+   <div class="menuSelection">
       <label for="nb_enfants">Enfants à charge</label>
       <span class="tooltip">ℹ️
-         <span class="tooltiptext">Nombre d’enfants à charge ou à naître au 31 août de l'année scolaire</span>
+         <span class="tooltiptext">Nombre d’enfants à charge ou à naître au 31 août de l'année scolaire en cours. 5 pts +1 par enfant pour la commune</span>
       </span>
       <select class="menuSelection" id="nb_enfants" name="nb_enfants">
          <option value="0" selected>0</option>
@@ -43,18 +56,7 @@
       </select>
    </div>
 
-   <div class="menuSelection">
-      <label for="situation_familiale">Situation familiale</label>
-      <span class="tooltip">ℹ️
-         <span class="tooltiptext">Votre situation familiale</span>
-      </span>
-      <select id="situation_familiale" name="situation_familiale">
-         <option value="RAS" selected>RAS</option>
-         <option value="rapprochement_conjoint">Rapprochement de conjoint⋅e</option>
-         <option value="autorité_conjointe">Autorité parentale conjointe</option>
-         <option value="parent_isole">Parent⋅e isolé⋅e</option>
-      </select>
-   </div>
+  
 
    <h2>Maladie ou handicap</h2>
 
@@ -68,10 +70,17 @@
    </div>
    <div class="menuSelection">
       <input type="checkbox" name="rqth-cdaph" id="rqth-cdaph">
-      <label for="rqth-cdaph">RQTH ou enfant handicapé⋅e</label>
+      <label for="rqth-cdaph">RQTH ou enfant/conjoint⋅e handicapé⋅e</label>
       <span class="tooltip">ℹ️
          <span class="tooltiptext">Reconnaissance de la qualité de travailleur⋅euse handicapé⋅e ou reconnaissance du
             handicap à 50% de l'enfant de moins de 20 ans</span>
+      </span>
+   </div>
+   <div class="menuSelection">
+      <input type="checkbox" name="rqth_medecin" id="rqth_medecin">
+      <label for="rqth_medecin">RQTH + Avis favorable médecine du travail</label>
+      <span class="tooltip">ℹ️
+         <span class="tooltiptext">RQTH + Avis favorable médecine du travail</span>
       </span>
    </div>
    <div class="menuSelection">
@@ -85,9 +94,9 @@
    <h2>Ancienneté dans le premier degré</h2>
 
    <div class="menuSelection">
-      <label for="anciennete">Votre ancienneté en années au 31 août de l'année en cours</label>
+      <label for="anciennete">Votre ancienneté en années pleines au 1er janvier de l'année en cours</label>
       <span class="tooltip">ℹ️
-         <span class="tooltiptext">Votre ancienneté au 31 août de l'année en cours dans les fonctions d'enseignant⋅e du
+         <span class="tooltiptext">Votre ancienneté au 1er janvier de l'année en cours dans les fonctions d'enseignant⋅e du
             1<sup>er</sup> degré</span>
       </span>
       <select id="anciennete" name="anciennete">
@@ -135,13 +144,11 @@
       </select>
    </div>
 
-   <p class="info">Si vous êtes dans le cas particulier d'une ancienneté qui ne se comptera pas qu'en années scolaires
-      pleines au 31 août de cette année :</p>
 
    <div class="menuSelection">
-      <label for="anciennete_mois">Votre ancienneté en mois au 31 août de l'année en cours</label>
+      <label for="anciennete_mois">Votre ancienneté en mois au premier janvier de l'année en cours</label>
       <span class="tooltip">ℹ️
-         <span class="tooltiptext">Votre ancienneté en mois au 31 août de l'année en cours dans les fonctions
+         <span class="tooltiptext">Votre ancienneté en mois au premier janvier de l'année en cours dans les fonctions
             d'enseignant⋅e du 1<sup>er</sup> degré</span>
       </span>
       <select id="anciennete-mois" name="anciennete-mois">
@@ -162,9 +169,9 @@
    </div>
 
    <div class="menuSelection">
-      <label for="anciennete_jours">Votre ancienneté en jours au 31 août de l'année en cours</label>
+      <label for="anciennete_jours">Votre ancienneté en jours au 1er janvier de l'année en cours</label>
       <span class="tooltip">ℹ️
-         <span class="tooltiptext">Votre ancienneté en jours au 31 août de l'année en cours dans les fonctions
+         <span class="tooltiptext">Votre ancienneté en jours au 1er janvier de l'année en cours dans les fonctions
             d'enseignant⋅e du 1<sup>er</sup> degré</span>
       </span>
       <select id="anciennete-jours" name="anciennete-jours">
