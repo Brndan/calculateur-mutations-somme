@@ -57,8 +57,7 @@ function calculMutation() {
     const REP = 3;
     
 
-    let parcours_pro = 0;
-    let voeu_repete = 0;
+   
 
     // Stabilité dans le poste
     //if (document.getElementById("anciennete-poste").checked) parcours_pro += ANCIENNETE_POSTE;
@@ -83,20 +82,38 @@ function calculMutation() {
             break;
     }
 
+    // Ancienneté en éducation prioritaire
+    let anciennete_rep = document.getElementById("anciennete_poste").value;
+    let pts_rep = 0;
+    switch (anciennete_rep) {
+        case "3":
+            pts_rep = 3;
+            break;
+        case "4":
+            pts_rep = 4;
+            break;
+        case "5":
+            pts_rep = 5;
+            break;
+        case "6":
+            pts_rep = 6;
+            break;
+        case "7":
+            pts_rep = 7;
+            break;
+    }
 
-
-
-
+    let parcours_pro = 0;
+    let voeu_repete = 0;
 
     if (document.getElementById("direction").checked) parcours_pro += ANCIENNETE_DIRECTION;
     if (document.getElementById("formation").checked) parcours_pro += FORMATION;
     if (document.getElementById("ash").checked) parcours_pro += ASH;
-    if (document.getElementById("rep").checked) parcours_pro += REP;
 
     if (document.getElementById("voeu-repete").checked) voeu_repete = 1;
   
     // Calcul des points 
-    let total_points = situation_familiale + handicap_maladie + anciennete + anciennete_poste + parcours_pro;
+    let total_points = situation_familiale + handicap_maladie + anciennete + anciennete_poste + pts_rep + parcours_pro;
 
     // Détruit les résultats affichés
     let node = document.getElementById("aAfficher");
