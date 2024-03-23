@@ -16,6 +16,7 @@ function calculMutation() {
     const ANCIENNETE_DIRECTION = 3;
     const FAISANT_FONCTION = 10;
     const ASH = 3;
+    const RECRUTEMENT_DEFICITAIRE = 3;
 
     /* Récupération des valeurs */
 
@@ -121,6 +122,8 @@ function calculMutation() {
     
     if (document.getElementById("ash").checked) parcours_pro += ASH;
     if (document.getElementById("voeu-repete").checked) voeu_repete = 1;
+    if (document.getElementById("difficulte_recrutement").checked) parcours_pro += RECRUTEMENT_DEFICITAIRE;
+
   
     // Calcul des points 
     let total_points = situation_familiale + handicap_maladie + anciennete + anciennete_poste + pts_rep + + pts_direction + parcours_pro;
