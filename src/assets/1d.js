@@ -1,5 +1,4 @@
 function calculMutation() {
-    console.log("calcul mutation")
     // Familial
     const PTS_SITUATION_FAMILIALE = 5;
     const PTS_RETOUR_CONGE_PARENTAL = 5;
@@ -71,7 +70,7 @@ function calculMutation() {
    
 
     // Stabilité dans le poste
-    let anciennete_poste = +document.getElementById("anciennete_poste").value;
+    let anciennete_poste = document.getElementById("anciennete_poste").value;
     let pts_stabilite = 0;
 
     switch (anciennete_poste) {
@@ -93,7 +92,7 @@ function calculMutation() {
     }
 
     // Ancienneté en éducation prioritaire
-    let anciennete_rep = +document.getElementById("anciennete_poste").value;
+    let anciennete_rep = document.getElementById("rep").value;
     let pts_rep = 0;
 
     switch (anciennete_rep) {
@@ -113,7 +112,7 @@ function calculMutation() {
             pts_rep = 7;
             break;
     }
-
+    
     // Direction
     let pts_direction = 0;
 
@@ -135,13 +134,11 @@ function calculMutation() {
     total_points += situation_familiale
     total_points += handicap_maladie 
     total_points += anciennete 
-    total_points += anciennete_poste 
+    total_points += pts_stabilite 
     total_points += pts_rep
     total_points += pts_direction
     total_points += parcours_pro;
     total_points += voeu_repete;
-
-    console.log("total_points " + total_points)
 
     // Détruit les résultats affichés
     let node = document.getElementById("aAfficher");
