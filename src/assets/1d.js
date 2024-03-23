@@ -62,7 +62,7 @@ function calculMutation() {
     anciennete += (+document.getElementById("anciennete").value) * 2;
     anciennete += (+document.getElementById("anciennete_mois").value / 12) *2;
     anciennete += (+document.getElementById("anciennete_jours").value / 360) *2;
-    //anciennete = Math.round(anciennete * 100) / 100;
+    anciennete = Math.round(anciennete * 100) / 100;
 
     
     
