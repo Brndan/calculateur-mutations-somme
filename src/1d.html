@@ -50,7 +50,12 @@
       </select>
    </div>
 
-  
+   <div class="menuSelection">
+      <input type="checkbox" name="retour_conge_parental" id="retour_conge_parental">
+      <label for="retour_conge_parental">Retour de congé parental</label>
+      <span class="tooltip">ℹ️
+         <span class="tooltiptext">Si le poste a été perdu à ce titre</span>
+      </span>
 
    <h2>Maladie ou handicap</h2>
 
@@ -77,13 +82,7 @@
          <span class="tooltiptext">RQTH + Avis favorable médecine du travail</span>
       </span>
    </div>
-   <div class="menuSelection">
-      <input type="checkbox" name="recrutement" id="recrutement">
-      <label for="recrutement">Recrutement au titre du handicap</label>
-      <span class="tooltip">ℹ️
-         <span class="tooltiptext">Recrutement au titre du handicap par la voie contractuelle</span>
-      </span>
-   </div>
+  
 
    <h2>Ancienneté dans le premier degré</h2>
 
@@ -203,6 +202,25 @@
       </select>
    </div>
 
+   <h2>Ancienneté dans le poste</h2>
+
+   <div class="menuSelection">
+      <label for="anciennete_poste">Ancienneté dans le poste</label>
+      <span class="tooltip">ℹ️
+         <span class="tooltiptext">Au 31 août de cette année</span>
+      </span>
+      <select class="menuSelection" id="anciennete_poste" name="anciennete_poste">
+         <option value="0" selected>0 année</option>
+         <option value="1">1 année</option>
+         <option value="2">2 années</option>
+         <option value="3"> au moins 3 années pleines</option>
+         <option value="4">au moins 4 années pleines</option>
+         <option value="5">au moins 5 années pleines</option>
+         <option value="6">au moins 6 années pleines</option>
+         <option value="7">7 années pleines ou +</option>
+      </select>
+   </div>
+
    <h2>Bonifications liées au parcours professionnel</h2>
 
    <h3>Bonifications liées à la direction d’école</h3>
@@ -229,14 +247,6 @@
 
    <h3>Autres éléments</h3>
 
-   <div class="menuSelection">
-      <input type="checkbox" name="anciennete_poste" id="anciennete_poste">
-      <label for="anciennete_poste">3 ans d’ancienneté dans le poste</label>
-      <span class="tooltip">ℹ️
-         <span class="tooltiptext">3 années effectives sur le poste à titre définitif au 31 août de l’année en
-            cours</span>
-      </span>
-   </div>
 
 
    <div class="menuSelection">

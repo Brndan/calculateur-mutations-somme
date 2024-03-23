@@ -1,6 +1,8 @@
 function calculMutation() {
     const PTS_SITUATION_FAMILIALE = 5;
     const PTS_HANDICAP_MALADIE = 25;
+    const PTS_PACD_CLD = 50;
+    const PTS_RETOUR_CONGE_PARENTAL = 5;
     const PTS_PARENT_ISOLE = 2;
     const PTS_MEDECINE_TRAVAIL = 100;
 
@@ -31,18 +33,19 @@ function calculMutation() {
         situation_familiale += enfants;
     }
 
+    if (document.getElementById("retour_conge_parental").checked) situation_familiale += PTS_RETOUR_CONGE_PARENTAL;
 
     // Handicap - maladie
     let handicap_maladie = 0;
 
-    if (document.getElementById("pacd-cld").checked) handicap_maladie += PTS_HANDICAP_MALADIE;
+    if (document.getElementById("pacd-cld").checked) handicap_maladie += PTS_PACD_CLD;
     if (document.getElementById("rqth-cdaph").checked) handicap_maladie += PTS_HANDICAP_MALADIE;
     if (document.getElementById("rqth_medecin").checked) handicap_maladie += PTS_MEDECINE_TRAVAIL;
 
     // Ancienneté dans le 1er degré
     let anciennete = +document.getElementById("anciennete").value * 2;
     anciennete += (+document.getElementById("anciennete-mois").value / 12) *2;
-    anciennete += (document.getElementById("anciennete-jours").value / 365) *2;
+    anciennete += (document.getElementById("anciennete-jours").value / 360) *2;
     anciennete = Math.round(anciennete * 100) / 100;
 
     // Parcours professionnel
@@ -57,7 +60,34 @@ function calculMutation() {
     let parcours_pro = 0;
     let voeu_repete = 0;
 
-    if (document.getElementById("anciennete-poste").checked) parcours_pro += ANCIENNETE_POSTE;
+    // Stabilité dans le poste
+    //if (document.getElementById("anciennete-poste").checked) parcours_pro += ANCIENNETE_POSTE;
+    let anciennete_poste = document.getElementById("anciennete_poste").value;
+    let pts_stabilite = 0;
+
+    switch (anciennete_poste) {
+        case "3":
+            pts_stabilite = 3;
+            break;
+        case "4":
+            pts_stabilite = 4;
+            break;
+        case "5":
+            pts_stabilite = 5;
+            break;
+        case "6":
+            pts_stabilite = 6;
+            break;
+        case "7":
+            pts_stabilite = 7;
+            break;
+    }
+
+
+
+
+
+
     if (document.getElementById("direction").checked) parcours_pro += ANCIENNETE_DIRECTION;
     if (document.getElementById("formation").checked) parcours_pro += FORMATION;
     if (document.getElementById("ash").checked) parcours_pro += ASH;
@@ -66,7 +96,7 @@ function calculMutation() {
     if (document.getElementById("voeu-repete").checked) voeu_repete = 1;
   
     // Calcul des points 
-    let total_points = situation_familiale + handicap_maladie + anciennete + parcours_pro;
+    let total_points = situation_familiale + handicap_maladie + anciennete + anciennete_poste + parcours_pro;
 
     // Détruit les résultats affichés
     let node = document.getElementById("aAfficher");
