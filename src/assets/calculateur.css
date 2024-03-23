@@ -29,3 +29,9 @@
   visibility: visible;
   opacity: 0.8;
 }
+
+/* Dissimuler les coordnnées du syndicat avant le calcul*/
+
+#syndicat {
+  display: none;
+}

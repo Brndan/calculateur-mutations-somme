@@ -6,6 +6,7 @@
    <title>Calculer ses points</title>
    <link rel="stylesheet" href="assets/calculateur.css">
 
+
 </head>
 
 <body>
@@ -55,7 +56,7 @@
       </div>
 
       <div class="menuSelection">
-         <input type="checkbox" name="retour_conge_parental" id="retour_conge_parental">
+         <input type="checkbox" name="retour_conge_parental" id="retour_conge_parental" class="cliquable">
          <label for="retour_conge_parental">Retour de congé parental</label>
          <span class="tooltip">ℹ️
             <span class="tooltiptext">Si le poste a été perdu à ce titre</span>
@@ -293,11 +294,11 @@
       </div>
 
       <div class="menuSelection">
-         <label for="voeu-repete">Vœu répété</label>
+         <label for="voeu_repete">Vœu répété</label>
          <span class="tooltip">ℹ️
             <span class="tooltiptext">Nombre d’années depuis lequel vous répétez le même vœu précis en rang 1</span>
          </span>
-         <select id="voeu-repete" name="voeu-repete">
+         <select id="voeu_repete" name="voeu_repete">
             <option value="0" selected>0 année</option>
             <option value="1">1 année</option>
             <option value="2">2 années</option>
@@ -326,9 +327,17 @@
 
 
       <div id="aAfficher"></div>
-
+      <div id="syndicat">
+         <h2>Des questions ?</h2>
+         <p>Si vous avez d’autres questions, avez besoin d’être accompagné⋅e, n’hésitez à pas à nous contacter : <a
+               href="mailto:somme@sudeducation.org">somme@sudeducation.org</a>.</p>
+         <p>Et si vous ne l’avez pas encore fait, n’hésitez pas <a
+               href="https://adhesion.sudeducation.org/categorie-produit/academie-damiens/somme/">adhérer en ligne</a> pour
+            soutenir un syndicalisme de lutte et de transformation sociale au service des personnels ! ✊</p>
+      </div>
    </div>
 </body>
+<script src="assets/1d.js"></script>
 
 
 </html>

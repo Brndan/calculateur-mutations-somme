@@ -1,9 +1,10 @@
 function calculMutation() {
-
+    console.log("calcul mutation")
     // Familial
     const PTS_SITUATION_FAMILIALE = 5;
     const PTS_RETOUR_CONGE_PARENTAL = 5;
     const PTS_PARENT_ISOLE = 2;
+    const PTS_ENFANTS = 1;
 
     // Médical et handicap
     const PTS_HANDICAP_MALADIE = 25;
@@ -11,7 +12,6 @@ function calculMutation() {
     const PTS_MEDECINE_TRAVAIL = 100;
 
     // Parcours professionnel
-    const PTS_FAISANT_FONCTION = 10;
     const PTS_DIRECTION_VACANTE = 20;
     const ANCIENNETE_DIRECTION = 3;
     const FAISANT_FONCTION = 10;
@@ -21,23 +21,26 @@ function calculMutation() {
     /* Récupération des valeurs */
 
     // Nombre d'enfants
-    let enfants = +document.getElementById("nb_enfants").value;
+    let nb_enfants = +document.getElementById("nb_enfants").value;
+    let enfants = nb_enfants * PTS_ENFANTS;
 
     // Situation familiale
-    let situation_familiale = document.getElementById("situation_familiale").value;
+    let situation_familiale = 0;
 
-    switch (situation_familiale) {
+    let situation = document.getElementById("situation_familiale").value;
+
+    switch (situation) {
         case "RAS":
             situation_familiale = 0;
             break;
         case "parent_isole":
-            situation_familiale = PTS_PARENT_ISOLE;
+            situation_familiale += PTS_PARENT_ISOLE;
             break;
         case "rapprochement_conjoint":
-            situation_familiale = PTS_SITUATION_FAMILIALE;
+            situation_familiale += PTS_SITUATION_FAMILIALE;
             break;
         case "autorité_conjointe":
-            situation_familiale = PTS_SITUATION_FAMILIALE;
+            situation_familiale += PTS_SITUATION_FAMILIALE;
             break;
     }
 
@@ -47,6 +50,7 @@ function calculMutation() {
 
     if (document.getElementById("retour_conge_parental").checked) situation_familiale += PTS_RETOUR_CONGE_PARENTAL;
 
+
     // Handicap - maladie
     let handicap_maladie = 0;
 
@@ -55,10 +59,11 @@ function calculMutation() {
     if (document.getElementById("rqth_medecin").checked) handicap_maladie += PTS_MEDECINE_TRAVAIL;
 
     // Ancienneté dans le 1er degré
-    let anciennete = +document.getElementById("anciennete").value * 2;
-    anciennete += (+document.getElementById("anciennete-mois").value / 12) *2;
-    anciennete += (document.getElementById("anciennete-jours").value / 360) *2;
-    anciennete = Math.round(anciennete * 100) / 100;
+    let anciennete = 0
+    anciennete += (+document.getElementById("anciennete").value) * 2;
+    anciennete += (+document.getElementById("anciennete_mois").value / 12) *2;
+    anciennete += (+document.getElementById("anciennete_jours").value / 360) *2;
+    //anciennete = Math.round(anciennete * 100) / 100;
 
     
     
@@ -66,8 +71,7 @@ function calculMutation() {
    
 
     // Stabilité dans le poste
-    //if (document.getElementById("anciennete-poste").checked) parcours_pro += ANCIENNETE_POSTE;
-    let anciennete_poste = document.getElementById("anciennete_poste").value;
+    let anciennete_poste = +document.getElementById("anciennete_poste").value;
     let pts_stabilite = 0;
 
     switch (anciennete_poste) {
@@ -89,8 +93,9 @@ function calculMutation() {
     }
 
     // Ancienneté en éducation prioritaire
-    let anciennete_rep = document.getElementById("anciennete_poste").value;
+    let anciennete_rep = +document.getElementById("anciennete_poste").value;
     let pts_rep = 0;
+
     switch (anciennete_rep) {
         case "3":
             pts_rep = 3;
@@ -118,15 +123,25 @@ function calculMutation() {
 
     // Autres
     let parcours_pro = 0;
-    let voeu_repete = 0;
     
     if (document.getElementById("ash").checked) parcours_pro += ASH;
-    if (document.getElementById("voeu-repete").checked) voeu_repete = 1;
     if (document.getElementById("difficulte_recrutement").checked) parcours_pro += RECRUTEMENT_DEFICITAIRE;
 
-  
+    let voeu_repete = +document.getElementById("voeu_repete").value
+
+
     // Calcul des points 
-    let total_points = situation_familiale + handicap_maladie + anciennete + anciennete_poste + pts_rep + + pts_direction + parcours_pro;
+    let total_points = 0;
+    total_points += situation_familiale
+    total_points += handicap_maladie 
+    total_points += anciennete 
+    total_points += anciennete_poste 
+    total_points += pts_rep
+    total_points += pts_direction
+    total_points += parcours_pro;
+    total_points += voeu_repete;
+
+    console.log("total_points " + total_points)
 
     // Détruit les résultats affichés
     let node = document.getElementById("aAfficher");
@@ -135,20 +150,6 @@ function calculMutation() {
     }
 
     displayResults("aAfficher");
-
-    if (document.getElementById("faisant-fonction-direction").checked) {
-        console.log("faisant fonction")
-        let total_points_direction = total_points + FAISANT_FONCTION;
-        let contenu = "Pour votre vœu sur le poste de direction pour lequel vous êtes faisant-fonction, votre barème est de " + total_points_direction + " points.";
-        addResult("aAfficher", contenu)
-
-    }
-
-    if (voeu_repete > 0) {
-        let total_points_voeu1 = total_points + voeu_repete;
-        let contenu = "Pour votre vœu précis de rang 1, votre barème est de " + total_points_voeu1 + " points.";
-        addResult("aAfficher", contenu)
-    }
 
     let bareme = "Votre barème est de " + total_points + " points.";
     addResult("aAfficher", bareme);
@@ -188,19 +189,8 @@ function displayResults(id) {
 }
 
 
-/* Gestionnaire d’événements */
 
-// Événement pour le bouton de réinitialisation
-
-/* const reset = document.querySelector("#reset");
-reset.onclick = () => { location.reload(); } */
-//const reset = document.querySelector("#reset");
-//reset.addEventListener("click", () => {
-//    location.reload();
-//});
-
-
-const checkboxes = document.querySelectorAll(".cliquable");
+const checkboxes = document.querySelectorAll('select, input');
 checkboxes.forEach(function(item) {
   item.addEventListener('click', calculMutation)
 })
