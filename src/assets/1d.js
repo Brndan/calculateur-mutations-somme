@@ -113,8 +113,8 @@ function calculMutation() {
     let pts_direction = 0;
 
     if (document.getElementById("direction").checked) pts_direction += ANCIENNETE_DIRECTION;
+    if (document.getElementById("faisant-fonction-direction").checked) pts_direction += FAISANT_FONCTION;
     if (document.getElementById("direction_vacante").checked) pts_direction += PTS_DIRECTION_VACANTE;
-
 
     // Autres
     let parcours_pro = 0;
