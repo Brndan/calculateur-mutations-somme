@@ -1,10 +1,21 @@
 function calculMutation() {
+
+    // Familial
     const PTS_SITUATION_FAMILIALE = 5;
-    const PTS_HANDICAP_MALADIE = 25;
-    const PTS_PACD_CLD = 50;
     const PTS_RETOUR_CONGE_PARENTAL = 5;
     const PTS_PARENT_ISOLE = 2;
+
+    // Médical et handicap
+    const PTS_HANDICAP_MALADIE = 25;
+    const PTS_PACD_CLD = 50;
     const PTS_MEDECINE_TRAVAIL = 100;
+
+    // Parcours professionnel
+    const PTS_FAISANT_FONCTION = 10;
+    const PTS_DIRECTION_VACANTE = 20;
+    const ANCIENNETE_DIRECTION = 3;
+    const FAISANT_FONCTION = 10;
+    const ASH = 3;
 
     /* Récupération des valeurs */
 
@@ -48,13 +59,7 @@ function calculMutation() {
     anciennete += (document.getElementById("anciennete-jours").value / 360) *2;
     anciennete = Math.round(anciennete * 100) / 100;
 
-    // Parcours professionnel
-    const ANCIENNETE_POSTE = 3;
-    const ANCIENNETE_DIRECTION = 3;
-    const FAISANT_FONCTION = 10;
-    const FORMATION = 3;
-    const ASH = 3;
-    const REP = 3;
+    
     
 
    
@@ -103,17 +108,22 @@ function calculMutation() {
             break;
     }
 
+    // Direction
+    let pts_direction = 0;
+
+    if (document.getElementById("direction").checked) pts_direction += ANCIENNETE_DIRECTION;
+    if (document.getElementById("direction_vacante").checked) pts_direction += PTS_DIRECTION_VACANTE;
+
+
+    // Autres
     let parcours_pro = 0;
     let voeu_repete = 0;
-
-    if (document.getElementById("direction").checked) parcours_pro += ANCIENNETE_DIRECTION;
-    if (document.getElementById("formation").checked) parcours_pro += FORMATION;
+    
     if (document.getElementById("ash").checked) parcours_pro += ASH;
-
     if (document.getElementById("voeu-repete").checked) voeu_repete = 1;
   
     // Calcul des points 
-    let total_points = situation_familiale + handicap_maladie + anciennete + anciennete_poste + pts_rep + parcours_pro;
+    let total_points = situation_familiale + handicap_maladie + anciennete + anciennete_poste + pts_rep + + pts_direction + parcours_pro;
 
     // Détruit les résultats affichés
     let node = document.getElementById("aAfficher");

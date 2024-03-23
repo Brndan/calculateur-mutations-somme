@@ -1,352 +1,333 @@
-   <!DOCTYPE html>
-   <html lang="fr">
-      <head>
-        <meta charset="UTF-8" />
-        <title>Calculer ses points</title>
-        <link rel="stylesheet" href="assets/calculateur.css">
+<!DOCTYPE html>
+<html lang="fr">
 
-      </head>
-   <body>
+<head>
+   <meta charset="UTF-8" />
+   <title>Calculer ses points</title>
+   <link rel="stylesheet" href="assets/calculateur.css">
+
+</head>
+
+<body>
 
    <div class="cliquable">
 
-   <h1>PE : calculer son barème en vue des mutations<img src="assets/logo.webp" alt="" id="logo"></h1>
+      <h1>PE : calculer son barème en vue des mutations<img src="assets/logo.webp" alt="" id="logo"></h1>
 
-   <p>Ce calculateur a pour objectif de vous aider à calculer votre barème. Des précisions sont accessibles en survolant
-      le ℹ️ avec votre souris.</p>
+      <p>Ce calculateur a pour objectif de vous aider à calculer votre barème. Des précisions sont accessibles en
+         survolant
+         le ℹ️ avec votre souris.</p>
 
-   <h2>Situation familiale</h2>
+      <h2>Situation familiale</h2>
 
-   <div class="menuSelection">
-      <label for="situation_familiale">Situation familiale</label>
-      <span class="tooltip">ℹ️
-         <span class="tooltiptext">Votre situation familiale</span>
-      </span>
-      <select id="situation_familiale" name="situation_familiale">
-         <option value="RAS" selected>RAS</option>
-         <option value="rapprochement_conjoint">Rapprochement de conjoint⋅e</option>
-         <option value="autorité_conjointe">Autorité parentale conjointe</option>
-         <option value="parent_isole">Parent⋅e isolé⋅e</option>
-      </select>
+      <div class="menuSelection">
+         <label for="situation_familiale">Situation familiale</label>
+         <span class="tooltip">ℹ️
+            <span class="tooltiptext">Votre situation familiale</span>
+         </span>
+         <select id="situation_familiale" name="situation_familiale">
+            <option value="RAS" selected>RAS</option>
+            <option value="rapprochement_conjoint">Rapprochement de conjoint⋅e</option>
+            <option value="autorité_conjointe">Autorité parentale conjointe</option>
+            <option value="parent_isole">Parent⋅e isolé⋅e</option>
+         </select>
+      </div>
+
+      <div class="menuSelection">
+         <label for="nb_enfants">Enfants à charge</label>
+         <span class="tooltip">ℹ️
+            <span class="tooltiptext">Nombre d’enfants à charge ou à naître au 31 août de l'année scolaire en cours. 5
+               pts +1 par enfant pour la commune</span>
+         </span>
+         <select class="menuSelection" id="nb_enfants" name="nb_enfants">
+            <option value="0" selected>0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+         </select>
+      </div>
+
+      <div class="menuSelection">
+         <input type="checkbox" name="retour_conge_parental" id="retour_conge_parental">
+         <label for="retour_conge_parental">Retour de congé parental</label>
+         <span class="tooltip">ℹ️
+            <span class="tooltiptext">Si le poste a été perdu à ce titre</span>
+         </span>
+      </div>
+
+      <h2>Maladie ou handicap</h2>
+
+
+      <div class="menuSelection">
+         <input type="checkbox" name="pacd-cld" id="pacd-cld">
+         <label for="pacd-cld">Sortie de PACD/CLD</label>
+         <span class="tooltip">ℹ️
+            <span class="tooltiptext">Sortie de poste adapté de courte durée ou congé longue durée</span>
+         </span>
+      </div>
+      <div class="menuSelection">
+         <input type="checkbox" name="rqth-cdaph" id="rqth-cdaph">
+         <label for="rqth-cdaph">RQTH ou enfant/conjoint⋅e handicapé⋅e</label>
+         <span class="tooltip">ℹ️
+            <span class="tooltiptext">Reconnaissance de la qualité de travailleur⋅euse handicapé⋅e ou reconnaissance
+               du
+               handicap à 50% de l'enfant de moins de 20 ans</span>
+         </span>
+      </div>
+      <div class="menuSelection">
+         <input type="checkbox" name="rqth_medecin" id="rqth_medecin">
+         <label for="rqth_medecin">RQTH + Avis favorable médecine du travail</label>
+         <span class="tooltip">ℹ️
+            <span class="tooltiptext">RQTH + Avis favorable médecine du travail</span>
+         </span>
+      </div>
+
+
+      <h2>Ancienneté dans le premier degré</h2>
+
+      <div class="menuSelection">
+         <label for="anciennete">Votre ancienneté en années pleines au 1er janvier de l'année en cours</label>
+         <span class="tooltip">ℹ️
+            <span class="tooltiptext">Votre ancienneté au 1er janvier de l'année en cours dans les fonctions
+               d'enseignant⋅e du
+               1<sup>er</sup> degré</span>
+         </span>
+         <select id="anciennete" name="anciennete">
+            <option value="0" selected>0 année</option>
+            <option value="1">1 année</option>
+            <option value="2">2 années</option>
+            <option value="3">3 années</option>
+            <option value="4">4 années</option>
+            <option value="5">5 années</option>
+            <option value="6">6 années</option>
+            <option value="7">7 années</option>
+            <option value="8">8 années</option>
+            <option value="9">9 années</option>
+            <option value="10">10 années</option>
+            <option value="11">11 années</option>
+            <option value="12">12 années</option>
+            <option value="13">13 années</option>
+            <option value="14">14 années</option>
+            <option value="15">15 années</option>
+            <option value="16">16 années</option>
+            <option value="17">17 années</option>
+            <option value="18">18 années</option>
+            <option value="19">19 années</option>
+            <option value="20">20 années</option>
+            <option value="21">21 années </option>
+            <option value="22">22 années </option>
+            <option value="23">23 années </option>
+            <option value="24">24 années </option>
+            <option value="25">25 années </option>
+            <option value="26">26 années </option>
+            <option value="27">27 années </option>
+            <option value="28">28 années </option>
+            <option value="29">29 années </option>
+            <option value="30">30 années </option>
+            <option value="31">31 années </option>
+            <option value="32">32 années </option>
+            <option value="33">33 années </option>
+            <option value="34">34 années </option>
+            <option value="35">35 années </option>
+            <option value="36">36 années </option>
+            <option value="37">37 années </option>
+            <option value="38">38 années </option>
+            <option value="39">39 années </option>
+            <option value="40">40 années </option>
+         </select>
+      </div>
+
+
+      <div class="menuSelection">
+         <label for="anciennete_mois">Votre ancienneté en mois au premier janvier de l'année en cours</label>
+         <span class="tooltip">ℹ️
+            <span class="tooltiptext">Votre ancienneté en mois au premier janvier de l'année en cours dans les
+               fonctions
+               d'enseignant⋅e du 1<sup>er</sup> degré</span>
+         </span>
+         <select id="anciennete_mois" name="anciennete_mois">
+            <option value="0" selected>0 mois</option>
+            <option value="1">1 mois</option>
+            <option value="2">2 mois</option>
+            <option value="3">3 mois</option>
+            <option value="4">4 mois</option>
+            <option value="5">5 mois</option>
+            <option value="6">6 mois</option>
+            <option value="7">7 mois</option>
+            <option value="8">8 mois</option>
+            <option value="9">9 mois</option>
+            <option value="10">10 mois</option>
+            <option value="11">11 mois</option>
+            <option value="12">12 mois</option>
+         </select>
+      </div>
+
+      <div class="menuSelection">
+         <label for="anciennete_jours">Votre ancienneté en jours au 1er janvier de l'année en cours</label>
+         <span class="tooltip">ℹ️
+            <span class="tooltiptext">Votre ancienneté en jours au 1er janvier de l'année en cours dans les fonctions
+               d'enseignant⋅e du 1<sup>er</sup> degré</span>
+         </span>
+         <select id="anciennete_jours" name="anciennete_jours">
+            <option value="0" selected>0 jour</option>
+            <option value="1">1 jour</option>
+            <option value="2">2 jours</option>
+            <option value="3">3 jours</option>
+            <option value="4">4 jours</option>
+            <option value="5">5 jours</option>
+            <option value="6">6 jours</option>
+            <option value="7">7 jours</option>
+            <option value="8">8 jours</option>
+            <option value="9">9 jours</option>
+            <option value="10">10 jours</option>
+            <option value="11">11 jours</option>
+            <option value="12">12 jours</option>
+            <option value="13">13 jours</option>
+            <option value="14">14 jours</option>
+            <option value="15">15 jours</option>
+            <option value="16">16 jours</option>
+            <option value="17">17 jours</option>
+            <option value="18">18 jours</option>
+            <option value="19">19 jours</option>
+            <option value="20">20 jours</option>
+            <option value="21">21 jours </option>
+            <option value="22">22 jours </option>
+            <option value="23">23 jours </option>
+            <option value="24">24 jours </option>
+            <option value="25">25 jours </option>
+            <option value="26">26 jours </option>
+            <option value="27">27 jours </option>
+            <option value="28">28 jours </option>
+            <option value="29">29 jours </option>
+            <option value="30">30 jours </option>
+         </select>
+      </div>
+
+      <h2>Ancienneté dans le poste</h2>
+
+      <div class="menuSelection">
+         <label for="anciennete_poste">Ancienneté dans le poste</label>
+         <span class="tooltip">ℹ️
+            <span class="tooltiptext">Au 31 août de cette année</span>
+         </span>
+         <select class="menuSelection" id="anciennete_poste" name="anciennete_poste">
+            <option value="0" selected>0 année</option>
+            <option value="1">1 année</option>
+            <option value="2">2 années</option>
+            <option value="3"> au moins 3 années pleines</option>
+            <option value="4">au moins 4 années pleines</option>
+            <option value="5">au moins 5 années pleines</option>
+            <option value="6">au moins 6 années pleines</option>
+            <option value="7">7 années pleines ou +</option>
+         </select>
+      </div>
+
+      <div class="menuSelection">
+         <label for="rep">Ancienneté en éducation prioritaire</label>
+         <span class="tooltip">ℹ️
+            <span class="tooltiptext">Au 31 août de cette année</span>
+         </span>
+         <select class="menuSelection" id="rep" name="rep">
+            <option value="0" selected>0 année</option>
+            <option value="1">1 année</option>
+            <option value="2">2 années</option>
+            <option value="3"> au moins 3 années pleines</option>
+            <option value="4">au moins 4 années pleines</option>
+            <option value="5">au moins 5 années pleines</option>
+            <option value="6">au moins 6 années pleines</option>
+            <option value="7">7 années pleines ou +</option>
+         </select>
+      </div>
+
+      <h2>Bonifications liées au parcours professionnel</h2>
+
+      <h3>Bonifications liées à la direction d’école</h3>
+
+      <div class="menuSelection">
+         <input type="checkbox" name="direction" id="direction">
+         <label for="direction">5 années de direction</label>
+         <span class="tooltip">ℹ️
+            <span class="tooltiptext">5 années de direction au cours de la carrière à titre définitif, avec ou sans
+               discontinuité, au 31 août de
+               l’année en cours</span>
+         </span>
+      </div>
+
+      <div class="menuSelection">
+         <input type="checkbox" name="faisant-fonction-direction" id="faisant-fonction-direction">
+         <label for="faisant-fonction-direction">Faisant fonction de direction</label>
+         <span class="tooltip">ℹ️
+            <span class="tooltiptext">Nommé faisant-fonction de direction au 1<sup>er</sup> septembre et demandant le
+               poste
+               à titre
+               définitif</span>
+         </span>
+      </div>
+
+      <div class="menuSelection">
+         <input type="checkbox" name="direction_vacante" id="direction_vacante">
+         <label for="direction_vacante">Le poste de direction a été déclaré vacant</label>
+         <span class="tooltip">ℹ️
+            <span class="tooltiptext">Poste de direction pas demandé au précédent mouvement</span>
+         </span>
+      </div>
+
+      <h3>Autres éléments</h3>
+
+
+      <div class="menuSelection">
+         <input type="checkbox" name="ash" id="ash">
+         <label for="ash">3 ans d’ASH à titre provisoire</label>
+         <span class="tooltip">ℹ️
+            <span class="tooltiptext">3 ans d’ASH sans discontinuer au 31 août de l’année en cours pour un poste à
+               titre
+               définitif hors ASH</span>
+         </span>
+      </div>
+
+      <div class="menuSelection">
+         <label for="voeu-repete">Vœu répété</label>
+         <span class="tooltip">ℹ️
+            <span class="tooltiptext">Nombre d’années depuis lequel vous répétez le même vœu précis en rang 1</span>
+         </span>
+         <select id="voeu-repete" name="voeu-repete">
+            <option value="0" selected>0 année</option>
+            <option value="1">1 année</option>
+            <option value="2">2 années</option>
+            <option value="3">3 années</option>
+            <option value="4">4 années</option>
+            <option value="5">5 années ou plus</option>
+         </select>
+      </div>
+
+      <div class="menuSelection">
+         <input type="checkbox" name="carte-scolaire" id="carte-scolaire">
+         <label for="carte-scolaire">Mesure de carte scolaire</label>
+         <span class="tooltip">ℹ️
+            <span class="tooltiptext">Votre poste a été supprimé cette année ou l'an dernier, et vous êtes encore en
+               affectation provisoire</span>
+         </span>
+      </div>
+
+      <div class="menuSelection">
+         <input type="checkbox" name="difficulte_recrutement" id="difficulte_recrutement">
+         <label for="difficulte_recrutement">3 ans d'exercice dans un territoire à difficulté de recrutement</label>
+         <span class="tooltip">ℹ️
+            <span class="tooltiptext">3 ans à titre définitif sur un secteur de collège déficitaire</span>
+         </span>
+      </div>
+
+
+      <div id="aAfficher"></div>
+
    </div>
-
-   <div class="menuSelection">
-      <label for="nb_enfants">Enfants à charge</label>
-      <span class="tooltip">ℹ️
-         <span class="tooltiptext">Nombre d’enfants à charge ou à naître au 31 août de l'année scolaire en cours. 5 pts +1 par enfant pour la commune</span>
-      </span>
-      <select class="menuSelection" id="nb_enfants" name="nb_enfants">
-         <option value="0" selected>0</option>
-         <option value="1">1</option>
-         <option value="2">2</option>
-         <option value="3">3</option>
-         <option value="4">4</option>
-         <option value="5">5</option>
-         <option value="6">6</option>
-         <option value="7">7</option>
-         <option value="8">8</option>
-         <option value="9">9</option>
-         <option value="10">10</option>
-      </select>
-   </div>
-
-   <div class="menuSelection">
-      <input type="checkbox" name="retour_conge_parental" id="retour_conge_parental">
-      <label for="retour_conge_parental">Retour de congé parental</label>
-      <span class="tooltip">ℹ️
-         <span class="tooltiptext">Si le poste a été perdu à ce titre</span>
-      </span>
-
-   <h2>Maladie ou handicap</h2>
-
-
-   <div class="menuSelection">
-      <input type="checkbox" name="pacd-cld" id="pacd-cld">
-      <label for="pacd-cld">Sortie de PACD/CLD</label>
-      <span class="tooltip">ℹ️
-         <span class="tooltiptext">Sortie de poste adapté de courte durée ou congé longue durée</span>
-      </span>
-   </div>
-   <div class="menuSelection">
-      <input type="checkbox" name="rqth-cdaph" id="rqth-cdaph">
-      <label for="rqth-cdaph">RQTH ou enfant/conjoint⋅e handicapé⋅e</label>
-      <span class="tooltip">ℹ️
-         <span class="tooltiptext">Reconnaissance de la qualité de travailleur⋅euse handicapé⋅e ou reconnaissance du
-            handicap à 50% de l'enfant de moins de 20 ans</span>
-      </span>
-   </div>
-   <div class="menuSelection">
-      <input type="checkbox" name="rqth_medecin" id="rqth_medecin">
-      <label for="rqth_medecin">RQTH + Avis favorable médecine du travail</label>
-      <span class="tooltip">ℹ️
-         <span class="tooltiptext">RQTH + Avis favorable médecine du travail</span>
-      </span>
-   </div>
-  
-
-   <h2>Ancienneté dans le premier degré</h2>
-
-   <div class="menuSelection">
-      <label for="anciennete">Votre ancienneté en années pleines au 1er janvier de l'année en cours</label>
-      <span class="tooltip">ℹ️
-         <span class="tooltiptext">Votre ancienneté au 1er janvier de l'année en cours dans les fonctions d'enseignant⋅e du
-            1<sup>er</sup> degré</span>
-      </span>
-      <select id="anciennete" name="anciennete">
-         <option value="0" selected>0 année</option>
-         <option value="1">1 année</option>
-         <option value="2">2 années</option>
-         <option value="3">3 années</option>
-         <option value="4">4 années</option>
-         <option value="5">5 années</option>
-         <option value="6">6 années</option>
-         <option value="7">7 années</option>
-         <option value="8">8 années</option>
-         <option value="9">9 années</option>
-         <option value="10">10 années</option>
-         <option value="11">11 années</option>
-         <option value="12">12 années</option>
-         <option value="13">13 années</option>
-         <option value="14">14 années</option>
-         <option value="15">15 années</option>
-         <option value="16">16 années</option>
-         <option value="17">17 années</option>
-         <option value="18">18 années</option>
-         <option value="19">19 années</option>
-         <option value="20">20 années</option>
-         <option value="21">21 années </option>
-         <option value="22">22 années </option>
-         <option value="23">23 années </option>
-         <option value="24">24 années </option>
-         <option value="25">25 années </option>
-         <option value="26">26 années </option>
-         <option value="27">27 années </option>
-         <option value="28">28 années </option>
-         <option value="29">29 années </option>
-         <option value="30">30 années </option>
-         <option value="31">31 années </option>
-         <option value="32">32 années </option>
-         <option value="33">33 années </option>
-         <option value="34">34 années </option>
-         <option value="35">35 années </option>
-         <option value="36">36 années </option>
-         <option value="37">37 années </option>
-         <option value="38">38 années </option>
-         <option value="39">39 années </option>
-         <option value="40">40 années </option>
-      </select>
-   </div>
-
-
-   <div class="menuSelection">
-      <label for="anciennete_mois">Votre ancienneté en mois au premier janvier de l'année en cours</label>
-      <span class="tooltip">ℹ️
-         <span class="tooltiptext">Votre ancienneté en mois au premier janvier de l'année en cours dans les fonctions
-            d'enseignant⋅e du 1<sup>er</sup> degré</span>
-      </span>
-      <select id="anciennete_mois" name="anciennete_mois">
-         <option value="0" selected>0 mois</option>
-         <option value="1">1 mois</option>
-         <option value="2">2 mois</option>
-         <option value="3">3 mois</option>
-         <option value="4">4 mois</option>
-         <option value="5">5 mois</option>
-         <option value="6">6 mois</option>
-         <option value="7">7 mois</option>
-         <option value="8">8 mois</option>
-         <option value="9">9 mois</option>
-         <option value="10">10 mois</option>
-         <option value="11">11 mois</option>
-         <option value="12">12 mois</option>
-      </select>
-   </div>
-
-   <div class="menuSelection">
-      <label for="anciennete_jours">Votre ancienneté en jours au 1er janvier de l'année en cours</label>
-      <span class="tooltip">ℹ️
-         <span class="tooltiptext">Votre ancienneté en jours au 1er janvier de l'année en cours dans les fonctions
-            d'enseignant⋅e du 1<sup>er</sup> degré</span>
-      </span>
-      <select id="anciennete_jours" name="anciennete_jours">
-         <option value="0" selected>0 jour</option>
-         <option value="1">1 jour</option>
-         <option value="2">2 jours</option>
-         <option value="3">3 jours</option>
-         <option value="4">4 jours</option>
-         <option value="5">5 jours</option>
-         <option value="6">6 jours</option>
-         <option value="7">7 jours</option>
-         <option value="8">8 jours</option>
-         <option value="9">9 jours</option>
-         <option value="10">10 jours</option>
-         <option value="11">11 jours</option>
-         <option value="12">12 jours</option>
-         <option value="13">13 jours</option>
-         <option value="14">14 jours</option>
-         <option value="15">15 jours</option>
-         <option value="16">16 jours</option>
-         <option value="17">17 jours</option>
-         <option value="18">18 jours</option>
-         <option value="19">19 jours</option>
-         <option value="20">20 jours</option>
-         <option value="21">21 jours </option>
-         <option value="22">22 jours </option>
-         <option value="23">23 jours </option>
-         <option value="24">24 jours </option>
-         <option value="25">25 jours </option>
-         <option value="26">26 jours </option>
-         <option value="27">27 jours </option>
-         <option value="28">28 jours </option>
-         <option value="29">29 jours </option>
-         <option value="30">30 jours </option>
-      </select>
-   </div>
-
-   <h2>Ancienneté dans le poste</h2>
-
-   <div class="menuSelection">
-      <label for="anciennete_poste">Ancienneté dans le poste</label>
-      <span class="tooltip">ℹ️
-         <span class="tooltiptext">Au 31 août de cette année</span>
-      </span>
-      <select class="menuSelection" id="anciennete_poste" name="anciennete_poste">
-         <option value="0" selected>0 année</option>
-         <option value="1">1 année</option>
-         <option value="2">2 années</option>
-         <option value="3"> au moins 3 années pleines</option>
-         <option value="4">au moins 4 années pleines</option>
-         <option value="5">au moins 5 années pleines</option>
-         <option value="6">au moins 6 années pleines</option>
-         <option value="7">7 années pleines ou +</option>
-      </select>
-   </div>
-
-   <div class="menuSelection">
-      <label for="rep">Ancienneté en éducation prioritaire</label>
-      <span class="tooltip">ℹ️
-         <span class="tooltiptext">Au 31 août de cette année</span>
-      </span>
-      <select class="menuSelection" id="rep" name="rep">
-         <option value="0" selected>0 année</option>
-         <option value="1">1 année</option>
-         <option value="2">2 années</option>
-         <option value="3"> au moins 3 années pleines</option>
-         <option value="4">au moins 4 années pleines</option>
-         <option value="5">au moins 5 années pleines</option>
-         <option value="6">au moins 6 années pleines</option>
-         <option value="7">7 années pleines ou +</option>
-      </select>
-   </div>
-
-   <h2>Bonifications liées au parcours professionnel</h2>
-
-   <h3>Bonifications liées à la direction d’école</h3>
-
-   <div class="menuSelection">
-      <input type="checkbox" name="direction" id="direction">
-      <label for="direction">5 années de direction</label>
-      <span class="tooltip">ℹ️
-         <span class="tooltiptext">5 années de direction au cours de la carrière à titre définitif, avec ou sans
-            discontinuité, au 31 août de
-            l’année en cours</span>
-      </span>
-   </div>
-
-   <div class="menuSelection">
-      <input type="checkbox" name="faisant-fonction-direction" id="faisant-fonction-direction">
-      <label for="faisant-fonction-direction">Faisant fonction de direction</label>
-      <span class="tooltip">ℹ️
-         <span class="tooltiptext">Nommé faisant-fonction de direction au 1<sup>er</sup> septembre et demandant le poste
-            à titre
-            définitif</span>
-      </span>
-   </div>
-
-   <h3>Autres éléments</h3>
-
-
-
-   <div class="menuSelection">
-      <input type="checkbox" name="formation" id="formation">
-      <label for="formation">3 ans de direction d’école d’application, CPC, formateur-ice</label>
-      <span class="tooltip">ℹ️
-         <span class="tooltiptext">3 ans de direction d’école d’application, CPC, maître⋅esse formateur-ice au 31 août
-            de l’année en cours</span>
-      </span>
-   </div>
-
-   <div class="menuSelection">
-      <input type="checkbox" name="ash" id="ash">
-      <label for="ash">3 ans d’ASH à titre provisoire</label>
-      <span class="tooltip">ℹ️
-         <span class="tooltiptext">3 ans d’ASH sans discontinuer au 31 août de l’année en cours pour un poste à titre
-            définitif hors ASH</span>
-      </span>
-   </div>
-
-   <div class="menuSelection">
-      <label for="voeu-repete">Vœu répété</label>
-      <span class="tooltip">ℹ️
-         <span class="tooltiptext">Nombre d’années depuis lequel vous répétez le même vœu précis en rang 1</span>
-      </span>
-      <select id="voeu-repete" name="voeu-repete">
-         <option value="0" selected>0 année</option>
-         <option value="1">1 année</option>
-         <option value="2">2 années</option>
-         <option value="3">3 années</option>
-         <option value="4">4 années</option>
-         <option value="5">5 années</option>
-         <option value="6">6 années</option>
-         <option value="7">7 années</option>
-         <option value="8">8 années</option>
-         <option value="9">9 années</option>
-         <option value="10">10 années</option>
-         <option value="11">11 années</option>
-         <option value="12">12 années</option>
-         <option value="13">13 années</option>
-         <option value="14">14 années</option>
-         <option value="15">15 années</option>
-         <option value="16">16 années</option>
-         <option value="17">17 années</option>
-         <option value="18">18 années</option>
-         <option value="19">19 années</option>
-         <option value="20">20 années</option>
-         <option value="21">21 années </option>
-         <option value="22">22 années </option>
-         <option value="23">23 années </option>
-         <option value="24">24 années </option>
-         <option value="25">25 années </option>
-         <option value="26">26 années </option>
-         <option value="27">27 années </option>
-         <option value="28">28 années </option>
-         <option value="29">29 années </option>
-         <option value="30">30 années </option>
-         <option value="31">31 années </option>
-         <option value="32">32 années </option>
-         <option value="33">33 années </option>
-         <option value="34">34 années </option>
-         <option value="35">35 années </option>
-         <option value="36">36 années </option>
-         <option value="37">37 années </option>
-         <option value="38">38 années </option>
-         <option value="39">39 années </option>
-         <option value="40">40 années </option>
-      </select>
-   </div>
-
-   <div class="menuSelection">
-      <input type="checkbox" name="carte-scolaire" id="carte-scolaire">
-      <label for="carte-scolaire">Mesure de carte scolaire</label>
-      <span class="tooltip">ℹ️
-         <span class="tooltiptext">Votre poste a été supprimé cette année ou l'an dernier, et vous êtes encore en
-            affectation provisoire</span>
-      </span>
-   </div>
-
-
-   <div id="aAfficher"></div>
-
-</div>
 </body>
 
 
