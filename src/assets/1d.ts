@@ -3,7 +3,7 @@
  *  */ 
 
 
-function calculMutation() {
+function calculMutation(): void {
     // Familial
     const PTS_SITUATION_FAMILIALE = 5;
     const PTS_RETOUR_CONGE_PARENTAL = 5;
@@ -217,7 +217,7 @@ function toLocaleNumber(fieldValue: number): string {
 }
 
 // Ces fonctions servent à afficher les éléments de réponse.
-function addResult(id: string, content: string) {
+function addResult(id: string, content: string): void {
     let newP = document.createElement("p");
     let node = document.createTextNode(content);
     newP.appendChild(node);
@@ -226,7 +226,7 @@ function addResult(id: string, content: string) {
     if (element != null) element.appendChild(newP)
 }
 
-function displayResults(id: string) {
+function displayResults(id: string): void {
     let newH2 = document.createElement("h2");
     let node = document.createTextNode("Résultat");
     newH2.appendChild(node);
