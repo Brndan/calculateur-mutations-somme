@@ -238,8 +238,7 @@ function displayResults(id: string): void {
 }
 
 
-
-const checkboxes = document.querySelectorAll('select, input');
-checkboxes.forEach(function (item) {
+// Gestionnaire d'événements
+(document.querySelectorAll('select, input')).forEach(function (item) {
     item.addEventListener('click', calculMutation)
 })
