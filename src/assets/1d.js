@@ -64,11 +64,6 @@ function calculMutation() {
     anciennete += (+document.getElementById("anciennete_jours").value / 360) *2;
     anciennete = Math.round(anciennete * 100) / 100;
 
-    
-    
-
-   
-
     // Stabilité dans le poste
     let anciennete_poste = document.getElementById("anciennete_poste").value;
     let pts_stabilite = 0;
@@ -148,7 +143,7 @@ function calculMutation() {
 
     displayResults("aAfficher");
 
-    let bareme = "Votre barème est de " + total_points + " points.";
+    let bareme = "Votre barème est de " + toLocaleNumber(total_points) + " points.";
     addResult("aAfficher", bareme);
 
     if (document.getElementById("carte-scolaire").checked) {
@@ -164,6 +159,13 @@ function calculMutation() {
     // Aller à la vue du résultat (utile sur petit écran)
     //document.getElementById("aAfficher").scrollIntoView();
 
+}
+
+// Affichage avec virgule
+function toLocaleNumber(fieldValue) {
+    fieldValue = fieldValue.toFixed(2)
+    fieldValue = fieldValue.replace(/\./, ',')
+    return fieldValue
 }
 
 // Ces fonctions servent à afficher les éléments de réponse.
