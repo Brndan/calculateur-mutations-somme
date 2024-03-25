@@ -239,6 +239,6 @@ function displayResults(id: string): void {
 
 
 // Gestionnaire d'événements
-(document.querySelectorAll('select, input')).forEach(function (item) {
-    item.addEventListener('click', calculMutation)
+(document.querySelectorAll('select, input')).forEach((item) => {
+    item.addEventListener('change', calculMutation);
 })
