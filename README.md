@@ -9,6 +9,7 @@ Le code est réalisé en typescript. Pour compiler en javascript,
 
 ```shell
 tsc --strict 1d.tsc
+tsc --strict  --removeComments --target es2022  1d.ts
 ```
 
 
