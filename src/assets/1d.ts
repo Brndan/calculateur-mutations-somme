@@ -186,7 +186,7 @@ function calculMutation(): void {
 
     displayResults("aAfficher");
 
-    let bareme = "Votre barème est de " + toLocaleNumber(total_points) + " points.";
+    let bareme = "Votre barème est de " + total_points.toLocaleString() + " points.";
     addResult("aAfficher", bareme);
 
     const check_carte_scolaire = document.getElementById("carte-scolaire") as HTMLInputElement | null
@@ -207,13 +207,6 @@ function calculMutation(): void {
     // Aller à la vue du résultat (utile sur petit écran)
     //document.getElementById("aAfficher")?.scrollIntoView();
 
-}
-
-// Affichage avec virgule
-function toLocaleNumber(fieldValue: number): string {
-    let locale_value = fieldValue.toFixed(2)
-    locale_value = locale_value.replace(/\./, ',')
-    return locale_value
 }
 
 // Ces fonctions servent à afficher les éléments de réponse.
